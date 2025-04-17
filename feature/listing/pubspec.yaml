@@ -1,6 +1,6 @@
 name: listing
 description: "A module for listing products."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -12,6 +12,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  go_router: ^15.0.0
 
 dev_dependencies:
   flutter_test:

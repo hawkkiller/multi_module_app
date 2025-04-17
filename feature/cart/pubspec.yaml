@@ -12,6 +12,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  go_router: ^15.0.0
 
 dev_dependencies:
   flutter_test:
