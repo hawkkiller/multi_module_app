@@ -1,0 +1,14 @@
+name: multi_module_app
+description: An example app that shows how to build multi-module Flutter apps with the monorepo approach.
+publish_to: "none"
+
+version: 0.0.1+1
+
+environment:
+  sdk: ">=3.7.0 <4.0.0"
+  flutter: ">=3.29.0 <4.0.0"
+
+workspace:
+  - app
+  - feature/cart
+  - feature/listing

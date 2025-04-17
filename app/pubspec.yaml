@@ -1,14 +1,18 @@
 name: app
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: ^3.7.2
+  sdk: ">=3.7.0 <4.0.0"
+  flutter: ">=3.29.0 <4.0.0"
+
+resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
+  go_router: ^15.0.0
 
 dev_dependencies:
   flutter_test:
