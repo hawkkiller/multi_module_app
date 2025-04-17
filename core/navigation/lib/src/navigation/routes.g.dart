@@ -9,14 +9,25 @@ part of 'routes.dart';
 List<RouteBase> get $appRoutes => [$rootShellRoute];
 
 RouteBase get $rootShellRoute => StatefulShellRouteData.$route(
-  navigatorContainerBuilder: RootShellRoute.$navigatorContainerBuilder,
   factory: $RootShellRouteExtension._fromState,
   branches: [
     StatefulShellBranchData.$branch(
-      routes: [GoRouteData.$route(path: '/listing', factory: $ListingRouteExtension._fromState)],
+      routes: [
+        GoRouteData.$route(
+          path: '/listing',
+
+          factory: $ListingRouteExtension._fromState,
+        ),
+      ],
     ),
     StatefulShellBranchData.$branch(
-      routes: [GoRouteData.$route(path: '/cart', factory: $CartRouteExtension._fromState)],
+      routes: [
+        GoRouteData.$route(
+          path: '/cart',
+
+          factory: $CartRouteExtension._fromState,
+        ),
+      ],
     ),
   ],
 );
@@ -34,7 +45,8 @@ extension $ListingRouteExtension on ListingRoute {
 
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
-  void pushReplacement(BuildContext context) => context.pushReplacement(location);
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
 
   void replace(BuildContext context) => context.replace(location);
 }
@@ -48,7 +60,8 @@ extension $CartRouteExtension on CartRoute {
 
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
-  void pushReplacement(BuildContext context) => context.pushReplacement(location);
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
 
   void replace(BuildContext context) => context.replace(location);
 }

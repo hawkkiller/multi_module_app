@@ -19,15 +19,5 @@ class RootShellRoute extends StatefulShellRouteData {
     BuildContext context,
     GoRouterState state,
     StatefulNavigationShell navigationShell,
-  ) {
-    return navigationShell;
-  }
-
-  static Widget $navigatorContainerBuilder(
-    BuildContext context,
-    StatefulNavigationShell navigationShell,
-    List<Widget> children,
-  ) {
-    return NavigationScaffold(navigationShell: navigationShell, children: children);
-  }
+  ) => NavigationScaffold(navigationShell: navigationShell);
 }
