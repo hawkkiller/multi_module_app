@@ -7,6 +7,10 @@ import 'package:navigation/src/widget/navigation_scaffold.dart';
 
 part 'routes.g.dart';
 
+GoRouter $createGoRouter() {
+  return GoRouter(routes: $appRoutes, initialLocation: ListingRoute().location);
+}
+
 @TypedStatefulShellRoute<RootShellRoute>(
   branches: [
     TypedStatefulShellBranch<ListingBranch>(routes: [TypedGoRoute<ListingRoute>(path: '/listing')]),
