@@ -20,8 +20,10 @@ dependencies:
     path: ../../feature/listing
   
   # Navigation Contracts
-  navigation_api:
-    path: ../navigation_api
+  cart_navigator:
+    path: ../navigation_api/cart_navigator
+  listing_navigator:
+    path: ../navigation_api/listing_navigator
 
 dev_dependencies:
   flutter_test:

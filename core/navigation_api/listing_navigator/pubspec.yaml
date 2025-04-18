@@ -1,19 +1,16 @@
-name: cart
-description: "A module for managing the shopping cart."
-publish_to: "none"
+name: listing_navigator
+description: "A new Flutter project."
+publish_to: 'none'
 version: 0.1.0
 
 environment:
   sdk: ">=3.7.0 <4.0.0"
-  flutter: ">=3.29.0 <4.0.0"
 
 resolution: workspace
 
 dependencies:
   flutter:
     sdk: flutter
-  cart_navigator:
-    path: ../../core/navigation_api/cart_navigator
 
 dev_dependencies:
   flutter_test:
