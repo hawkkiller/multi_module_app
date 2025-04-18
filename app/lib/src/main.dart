@@ -1,5 +1,5 @@
+import 'package:app/src/navigation/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:navigation/navigation.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,13 +13,7 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  final _router = $createGoRouter();
-
-  @override
-  void dispose() {
-    _router.dispose();
-    super.dispose();
-  }
+  final _router = createRouter();
 
   @override
   Widget build(BuildContext context) {

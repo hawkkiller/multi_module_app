@@ -11,7 +11,6 @@ environment:
 workspace:
   - app
   # Core
-  - core/navigation
   - core/navigation_api/cart_navigator
   - core/navigation_api/listing_navigator
   # Features

@@ -13,8 +13,18 @@ dependencies:
   flutter:
     sdk: flutter
   go_router: ^15.0.0
-  navigation:
-    path: ../core/navigation
+
+  # Features
+  cart:
+    path: ../feature/cart
+  listing:
+    path: ../feature/listing
+
+  # Navigation
+  cart_navigator:
+    path: ../core/navigation_api/cart_navigator
+  listing_navigator:
+    path: ../core/navigation_api/listing_navigator
 
 dev_dependencies:
   flutter_test:
