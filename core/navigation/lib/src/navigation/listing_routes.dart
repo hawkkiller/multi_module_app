@@ -1,6 +1,6 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:listing/src/widget/listing_screen.dart';
+import 'package:listing/listing.dart';
 
 class ListingBranch extends StatefulShellBranchData {
   const ListingBranch();

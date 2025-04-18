@@ -1,1 +1,1 @@
-export 'src/navigation/routes.dart';
+export 'src/navigation/routes.dart' show $createGoRouter;

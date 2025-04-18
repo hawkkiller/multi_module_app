@@ -10,5 +10,9 @@ environment:
 
 workspace:
   - app
+  # Core
+  - core/navigation
+  - core/navigation_api
+  # Features
   - feature/cart
   - feature/listing
