@@ -12,14 +12,17 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+  shared_preferences: ^2.5.3
+  settings_api:
+    path: ../../feature/settings_api
+
+  # Navigation Contracts
   navigation_api:
     path: ../../core/navigation_api
-  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true

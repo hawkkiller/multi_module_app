@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:key_value_database/key_value_database.dart';
-import 'package:settings/src/bloc/settings_bloc.dart';
+import 'package:settings/settings.dart';
 import 'package:settings/src/data/settings_datasource_local.dart';
 import 'package:settings_api/settings_api.dart';
 
 class SettingsDependencies {
-  const SettingsDependencies._({required this.settingsBloc});
+  const SettingsDependencies._({required this.settingsController});
 
-  final SettingsBloc settingsBloc;
+  final SettingsController settingsController;
 
   static SettingsDependencies of(BuildContext context) {
     final inherited = context.getInheritedWidgetOfExactType<SettingsDependenciesInherited>();
@@ -21,14 +21,16 @@ class SettingsDependencies {
   static Future<SettingsDependencies> create(KeyValueDatabase database) async {
     final settingsDatasource = SettingsDatasourceLocal(database);
 
-    final settingsBloc = SettingsBloc(
-      settingsDatasource: settingsDatasource,
-      initialState: SettingsStateIdle(
-        settings: await settingsDatasource.getSettings() ?? SettingsModel.initial(),
+    final settingsMediator = SettingsBlocMediator(
+      settingsBloc: SettingsBloc(
+        settingsDatasource: settingsDatasource,
+        initialState: SettingsStateIdle(
+          settings: await settingsDatasource.getSettings() ?? SettingsModel.initial(),
+        ),
       ),
     );
 
-    return SettingsDependencies._(settingsBloc: settingsBloc);
+    return SettingsDependencies._(settingsController: settingsMediator);
   }
 }
 

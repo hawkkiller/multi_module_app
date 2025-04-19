@@ -10,8 +10,11 @@ Future<DependenciesContainer> buildDependenciesContainer() async {
   final sharedPreferencesAsync = SharedPreferencesAsync();
   final value = SharedPrefsDatabase(sharedPreferencesAsync);
 
-  final cartDependencies = CartDependencies(cartNavigator: cartNavigator);
   final settingsDependencies = await SettingsDependencies.create(value);
+  final cartDependencies = CartDependencies(
+    cartNavigator: cartNavigator,
+    settingsController: settingsDependencies.settingsController,
+  );
 
   return DependenciesContainer(
     cartDependencies: cartDependencies,

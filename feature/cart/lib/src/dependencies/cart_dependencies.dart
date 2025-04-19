@@ -1,9 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:navigation_api/cart_navigator.dart';
+import 'package:settings_api/settings_api.dart';
 
 /// Dependencies container for the cart feature.
 class CartDependencies {
-  CartDependencies({required this.cartNavigator});
+  CartDependencies({required this.cartNavigator, required this.settingsController});
 
   /// Provides the dependencies of the cart feature to the widget tree.
   static CartDependencies of(BuildContext context) {
@@ -20,6 +21,9 @@ class CartDependencies {
 
   /// Instance should be initialized by the Composition Root.
   final CartNavigator cartNavigator;
+
+  /// Instance should be initialized by the Composition Root.
+  final SettingsController settingsController;
 }
 
 /// Provides [CartDependencies] to the widget tree.
