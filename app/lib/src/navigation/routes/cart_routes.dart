@@ -1,4 +1,4 @@
-import 'package:app/src/navigation_api/cart_navigator.dart';
+import 'package:app/src/navigation/navigators/cart_navigator.dart';
 import 'package:cart/cart.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
