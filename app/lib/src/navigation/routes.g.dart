@@ -9,6 +9,7 @@ part of 'routes.dart';
 List<RouteBase> get $appRoutes => [$rootShellRoute];
 
 RouteBase get $rootShellRoute => StatefulShellRouteData.$route(
+  navigatorContainerBuilder: RootShellRoute.$navigatorContainerBuilder,
   factory: $RootShellRouteExtension._fromState,
   branches: [
     StatefulShellBranchData.$branch(

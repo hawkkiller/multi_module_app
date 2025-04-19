@@ -32,5 +32,19 @@ class RootShellRoute extends StatefulShellRouteData {
     BuildContext context,
     GoRouterState state,
     StatefulNavigationShell navigationShell,
-  ) => NavigationScaffold(navigationShell: navigationShell);
+  ) => navigationShell;
+
+  static Widget $navigatorContainerBuilder(
+    BuildContext context,
+    StatefulNavigationShell navigationShell,
+    List<Widget> children,
+  ) {
+    return NavigationScaffold(
+      currentIndex: navigationShell.currentIndex,
+      onIndexChanged: (index) {
+        navigationShell.goBranch(index, initialLocation: index == navigationShell.currentIndex);
+      },
+      children: children,
+    );
+  }
 }
