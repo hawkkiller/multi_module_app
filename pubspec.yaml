@@ -10,8 +10,14 @@ environment:
 
 workspace:
   - app
+
   # Core
   - core/navigation_api
+  - core/key_value_database
+  - core/shared_prefs_database
+
   # Features
   - feature/cart
   - feature/listing
+  - feature/settings
+  - feature/settings_api
