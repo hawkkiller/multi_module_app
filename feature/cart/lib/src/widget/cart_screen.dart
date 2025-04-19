@@ -1,17 +1,20 @@
+import 'package:cart/src/dependencies/cart_dependencies.dart';
 import 'package:cart_navigator/cart_navigator.dart';
 import 'package:flutter/material.dart';
 
-class CartDependenciesProvider extends StatelessWidget {
-  const CartDependenciesProvider({super.key});
+class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final dependencies = CartDependencies.of(context);
+
+    return CartView(cartNavigator: dependencies.cartNavigator);
   }
 }
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key, required this.cartNavigator});
+class CartView extends StatelessWidget {
+  const CartView({super.key, required this.cartNavigator});
 
   final CartNavigator cartNavigator;
 

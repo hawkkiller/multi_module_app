@@ -25,6 +25,7 @@ dependencies:
     path: ../core/navigation_api/cart_navigator
   listing_navigator:
     path: ../core/navigation_api/listing_navigator
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:
