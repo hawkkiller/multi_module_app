@@ -17,13 +17,13 @@ class NavigationScaffold extends StatelessWidget {
     return Scaffold(
       body: IndexedStack(index: currentIndex, children: children),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: onIndexChanged,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.category_rounded), label: 'Products'),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_bag), label: 'Cart'),
           BottomNavigationBarItem(icon: Icon(Icons.settings_rounded), label: 'Settings'),
         ],
-        currentIndex: currentIndex,
-        onTap: onIndexChanged,
       ),
     );
   }
