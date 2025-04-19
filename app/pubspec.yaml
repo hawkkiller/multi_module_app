@@ -12,18 +12,25 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
+
   go_router: ^15.0.0
+  shared_preferences: ^2.5.3
+
+  # Core
+  shared_prefs_database:
+    path: ../core/shared_prefs_database
 
   # Features
   cart:
     path: ../feature/cart
   listing:
     path: ../feature/listing
+  settings:
+    path: ../feature/settings
 
   # Navigation
   navigation_api:
     path: ../core/navigation_api
-  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

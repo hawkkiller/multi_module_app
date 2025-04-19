@@ -1,10 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:navigation_api/cart_navigator.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 /// Dependencies container for the cart feature.
 class CartDependencies {
-  CartDependencies({required this.sharedPrefereces, required this.cartNavigator});
+  CartDependencies({required this.cartNavigator});
 
   /// Provides the dependencies of the cart feature to the widget tree.
   static CartDependencies of(BuildContext context) {
@@ -18,9 +17,6 @@ class CartDependencies {
 
     return inherited.dependencies;
   }
-
-  /// Instance should be initialized by the Composition Root.
-  final SharedPreferences sharedPrefereces;
 
   /// Instance should be initialized by the Composition Root.
   final CartNavigator cartNavigator;

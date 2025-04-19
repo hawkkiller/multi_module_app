@@ -1,5 +1,6 @@
 import 'package:app/src/navigation/routes/cart_routes.dart';
 import 'package:app/src/navigation/routes/listing_routes.dart';
+import 'package:app/src/navigation/routes/settings_routes.dart';
 import 'package:app/src/widget/navigation_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -23,6 +24,9 @@ GoRouter createRouter() {
           routes: [TypedGoRoute<CartDetailsRoute>(path: 'details')],
         ),
       ],
+    ),
+    TypedStatefulShellBranch<SettingsBranch>(
+      routes: [TypedGoRoute<SettingsRoute>(path: '/settings')],
     ),
   ],
 )
