@@ -1,5 +1,5 @@
-name: cart_navigator
-description: "A new Flutter project."
+name: navigation_api
+description: "Package with navigation contracts"
 publish_to: 'none'
 version: 0.1.0
 

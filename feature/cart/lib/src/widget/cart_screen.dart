@@ -1,6 +1,6 @@
 import 'package:cart/src/dependencies/cart_dependencies.dart';
-import 'package:cart_navigator/cart_navigator.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation_api/cart_navigator.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

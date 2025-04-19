@@ -1,5 +1,5 @@
-import 'package:cart_navigator/cart_navigator.dart';
 import 'package:flutter/widgets.dart';
+import 'package:navigation_api/cart_navigator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// Dependencies container for the cart feature.

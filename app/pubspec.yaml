@@ -21,10 +21,8 @@ dependencies:
     path: ../feature/listing
 
   # Navigation
-  cart_navigator:
-    path: ../core/navigation_api/cart_navigator
-  listing_navigator:
-    path: ../core/navigation_api/listing_navigator
+  navigation_api:
+    path: ../core/navigation_api
   shared_preferences: ^2.5.3
 
 dev_dependencies:
