@@ -11,6 +11,7 @@ Future<void> main() async {
     () async {
       WidgetsFlutterBinding.ensureInitialized();
       final container = await buildDependenciesContainer();
+
       runApp(RootContext(container: container));
     },
     (error, stack) {
