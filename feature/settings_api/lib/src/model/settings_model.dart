@@ -30,4 +30,9 @@ class SettingsModel {
 
   @override
   int get hashCode => notificationsEnabled.hashCode;
+
+  @override
+  String toString() {
+    return 'SettingsModel(notificationsEnabled: $notificationsEnabled)';
+  }
 }

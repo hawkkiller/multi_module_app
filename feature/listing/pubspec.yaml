@@ -13,6 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
   go_router: ^15.0.0
+  settings_api:
+    path: ../settings_api
 
 dev_dependencies:
   flutter_test:

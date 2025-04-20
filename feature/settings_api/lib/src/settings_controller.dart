@@ -8,5 +8,6 @@ abstract interface class SettingsController {
   /// The current settings.
   SettingsModel get settings;
 
+  /// Update the settings.
   void updateSettings(SettingsModel settings);
 }

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:app/src/dependencies/composition_root.dart';
 import 'package:app/src/dependencies/dependencies_container.dart';
 import 'package:app/src/navigation/routes.dart';
-import 'package:app/src/widget/app_scope.dart';
+import 'package:app/src/widget/feature_dependencies_scope.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {

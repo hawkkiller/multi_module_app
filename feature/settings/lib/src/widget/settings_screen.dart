@@ -1,7 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:settings/src/dependencies/settings_dependencies.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:settings/settings.dart';
 import 'package:settings_api/settings_api.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -10,35 +9,21 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final container = SettingsDependencies.of(context);
-    return SettingsView(settingsController: container.settingsController);
+    return SettingsView(settingsBloc: container.settingsBloc);
   }
 }
 
 class SettingsView extends StatefulWidget {
-  const SettingsView({super.key, required this.settingsController});
+  const SettingsView({super.key, required this.settingsBloc});
 
-  final SettingsController settingsController;
+  final SettingsBloc settingsBloc;
 
   @override
   State<SettingsView> createState() => _SettingsViewState();
 }
 
 class _SettingsViewState extends State<SettingsView> {
-  late SettingsModel _settings;
-  late final StreamSubscription<SettingsModel> settingsSubscription;
-
-  @override
-  void initState() {
-    super.initState();
-    _settings = widget.settingsController.settings;
-    settingsSubscription = widget.settingsController.settingsStream.listen(_onSettingsChanged);
-  }
-
-  @override
-  void dispose() {
-    settingsSubscription.cancel();
-    super.dispose();
-  }
+  late SettingsModel _settings = widget.settingsBloc.state.settings;
 
   void _onSettingsChanged(SettingsModel settings) {
     if (settings == _settings) {
@@ -55,7 +40,7 @@ class _SettingsViewState extends State<SettingsView> {
       _settings = settings;
     });
 
-    widget.settingsController.updateSettings(settings);
+    widget.settingsBloc.add(SettingsEventSave(settings: settings));
   }
 
   void _updateNotificationsEnabled(bool value) {
@@ -64,16 +49,22 @@ class _SettingsViewState extends State<SettingsView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          SwitchListTile(
-            title: const Text('Enable Notifications'),
-            value: _settings.notificationsEnabled,
-            onChanged: _updateNotificationsEnabled,
-          ),
-          // Add more settings options here
-        ],
+    return BlocListener<SettingsBloc, SettingsState>(
+      bloc: widget.settingsBloc,
+      listener: (context, state) {
+        _onSettingsChanged(state.settings);
+      },
+      child: Scaffold(
+        body: Column(
+          children: [
+            SwitchListTile(
+              title: const Text('Enable Notifications'),
+              value: _settings.notificationsEnabled,
+              onChanged: _updateNotificationsEnabled,
+            ),
+            // Add more settings options here
+          ],
+        ),
       ),
     );
   }

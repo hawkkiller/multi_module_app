@@ -5,9 +5,10 @@ import 'package:settings/src/data/settings_datasource_local.dart';
 import 'package:settings_api/settings_api.dart';
 
 class SettingsDependencies {
-  const SettingsDependencies._({required this.settingsController});
+  const SettingsDependencies._({required this.settingsController, required this.settingsBloc});
 
   final SettingsController settingsController;
+  final SettingsBloc settingsBloc;
 
   static SettingsDependencies of(BuildContext context) {
     final inherited = context.getInheritedWidgetOfExactType<SettingsDependenciesInherited>();
@@ -20,17 +21,15 @@ class SettingsDependencies {
 
   static Future<SettingsDependencies> create(KeyValueDatabase database) async {
     final settingsDatasource = SettingsDatasourceLocal(database);
-
-    final settingsMediator = SettingsBlocMediator(
-      settingsBloc: SettingsBloc(
-        settingsDatasource: settingsDatasource,
-        initialState: SettingsStateIdle(
-          settings: await settingsDatasource.getSettings() ?? SettingsModel.initial(),
-        ),
+    final settingsBloc = SettingsBloc(
+      settingsDatasource: settingsDatasource,
+      initialState: SettingsStateIdle(
+        settings: await settingsDatasource.getSettings() ?? SettingsModel.initial(),
       ),
     );
+    final settingsMediator = SettingsBlocMediator(settingsBloc: settingsBloc);
 
-    return SettingsDependencies._(settingsController: settingsMediator);
+    return SettingsDependencies._(settingsController: settingsMediator, settingsBloc: settingsBloc);
   }
 }
 
