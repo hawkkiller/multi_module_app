@@ -15,6 +15,12 @@ class SettingsModel {
     return {'notificationsEnabled': notificationsEnabled};
   }
 
+  SettingsModel copyWith({bool? notificationsEnabled}) {
+    return SettingsModel(
+      notificationsEnabled: notificationsEnabled ?? this.notificationsEnabled,
+    );
+  }
+
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
