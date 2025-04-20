@@ -1,3 +1,3 @@
-# cart_navigator
+# navigation_api
 
-A new Flutter project.
+Contracts for navigation in the app
