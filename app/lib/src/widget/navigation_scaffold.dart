@@ -15,7 +15,16 @@ class NavigationScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(index: currentIndex, children: children),
+      body: Column(
+        children: [
+          Image.asset(
+            'assets/image.png',
+            height: 100,
+            width: 100,
+          ),
+          Expanded(child: IndexedStack(index: currentIndex, children: children)),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: onIndexChanged,

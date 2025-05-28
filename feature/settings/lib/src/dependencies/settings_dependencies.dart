@@ -5,19 +5,9 @@ import 'package:settings/src/data/settings_datasource_local.dart';
 import 'package:settings_api/settings_api.dart';
 
 class SettingsDependencies {
-  const SettingsDependencies._({required this.settingsController, required this.settingsBloc});
+  const SettingsDependencies._({required this.settingsController});
 
   final SettingsController settingsController;
-  final SettingsBloc settingsBloc;
-
-  static SettingsDependencies of(BuildContext context) {
-    final inherited = context.getInheritedWidgetOfExactType<SettingsDependenciesInherited>();
-    if (inherited == null) {
-      throw FlutterError('SettingsDependencies not found in context');
-    }
-
-    return inherited.dependencies;
-  }
 
   static Future<SettingsDependencies> create(KeyValueDatabase database) async {
     final settingsDatasource = SettingsDatasourceLocal(database);
@@ -27,9 +17,10 @@ class SettingsDependencies {
         settings: await settingsDatasource.getSettings() ?? SettingsModel.initial(),
       ),
     );
+
     final settingsMediator = SettingsBlocMediator(settingsBloc: settingsBloc);
 
-    return SettingsDependencies._(settingsController: settingsMediator, settingsBloc: settingsBloc);
+    return SettingsDependencies._(settingsController: settingsMediator);
   }
 }
 
@@ -46,6 +37,15 @@ class SettingsDependenciesInherited extends InheritedWidget {
 
   /// The dependencies of the settings feature.
   final SettingsDependencies dependencies;
+
+  static SettingsDependencies of(BuildContext context) {
+    final inherited = context.getInheritedWidgetOfExactType<SettingsDependenciesInherited>();
+    if (inherited == null) {
+      throw FlutterError('SettingsDependencies not found in context');
+    }
+
+    return inherited.dependencies;
+  }
 
   @override
   bool updateShouldNotify(SettingsDependenciesInherited oldWidget) {

@@ -21,16 +21,10 @@ class ListingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: StreamBuilder(
-          stream: settingsController.settingsStream,
-          initialData: settingsController.settings,
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              final settings = snapshot.data;
-              return Text('Settings: ${settings.toString()}');
-            }
-        
-            return const CircularProgressIndicator();
+        child: ListenableBuilder(
+          listenable: settingsController,
+          builder: (context, child) {
+            return Text('Settings: ${settingsController.settings.toString()}');
           },
         ),
       ),
