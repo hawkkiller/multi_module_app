@@ -1,8 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:key_value_database/key_value_database.dart';
 import 'package:settings/settings.dart';
+import 'package:settings/src/bloc/settings_bloc.dart';
+import 'package:settings/src/bloc/settings_bloc_mediator.dart';
 import 'package:settings/src/data/settings_datasource_local.dart';
-import 'package:settings_api/settings_api.dart';
 
 class SettingsDependencies {
   const SettingsDependencies._({required this.settingsController});

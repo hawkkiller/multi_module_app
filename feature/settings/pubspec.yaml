@@ -13,8 +13,6 @@ dependencies:
     sdk: flutter
   
   flutter_bloc: ^9.1.0
-  settings_api:
-    path: ../settings_api
   key_value_database:
     path: ../../core/key_value_database
 

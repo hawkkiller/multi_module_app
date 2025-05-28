@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:settings/settings.dart';
 import 'package:settings/src/bloc/settings_bloc.dart';
-import 'package:settings_api/settings_api.dart';
 
 class SettingsBlocMediator with ChangeNotifier implements SettingsController {
   SettingsBlocMediator({required this.settingsBloc}) : _state = settingsBloc.state {

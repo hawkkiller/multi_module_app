@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listing/src/dependencies/listing_dependencies.dart';
-import 'package:settings_api/settings_api.dart';
+import 'package:settings/settings.dart';
 
 class ListingScreen extends StatelessWidget {
   const ListingScreen({super.key});

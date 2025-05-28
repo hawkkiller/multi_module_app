@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:key_value_database/key_value_database.dart';
+import 'package:settings/settings.dart';
 import 'package:settings/src/data/settings_datasource.dart';
-import 'package:settings_api/settings_api.dart';
 
 final class SettingsDatasourceLocal implements SettingsDatasource {
   SettingsDatasourceLocal(this._database);

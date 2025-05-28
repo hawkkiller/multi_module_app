@@ -20,4 +20,3 @@ workspace:
   - feature/cart
   - feature/listing
   - feature/settings
-  - feature/settings_api

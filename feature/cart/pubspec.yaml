@@ -13,8 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.5.3
-  settings_api:
-    path: ../../feature/settings_api
+  settings:
+    path: ../settings
 
   # Navigation Contracts
   navigation_api:

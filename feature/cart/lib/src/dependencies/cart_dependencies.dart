@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:navigation_api/cart_navigator.dart';
-import 'package:settings_api/settings_api.dart';
+import 'package:settings/settings.dart';
 
 /// Dependencies container for the cart feature.
 class CartDependencies {

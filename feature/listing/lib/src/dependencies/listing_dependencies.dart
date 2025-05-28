@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:settings_api/settings_api.dart';
+import 'package:settings/settings.dart';
 
 /// Dependencies container for the cart feature.
 class ListingDependencies {

@@ -1,4 +1,4 @@
-import 'package:settings_api/settings_api.dart';
+import 'package:settings/settings.dart';
 
 abstract interface class SettingsDatasource {
   Future<SettingsModel?> getSettings();

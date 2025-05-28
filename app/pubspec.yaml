@@ -27,8 +27,6 @@ dependencies:
     path: ../feature/listing
   settings:
     path: ../feature/settings
-  settings_api:
-    path: ../feature/settings_api
 
   # Navigation
   navigation_api:

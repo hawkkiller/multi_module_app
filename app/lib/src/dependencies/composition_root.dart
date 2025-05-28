@@ -4,7 +4,6 @@ import 'package:cart/cart.dart';
 import 'package:listing/listing.dart';
 import 'package:navigation_api/cart_navigator.dart';
 import 'package:settings/settings.dart';
-import 'package:settings_api/settings_api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shared_prefs_database/shared_prefs_database.dart';
 

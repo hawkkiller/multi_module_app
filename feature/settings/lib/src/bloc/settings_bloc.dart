@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:settings/settings.dart';
 import 'package:settings/src/data/settings_datasource.dart';
-import 'package:settings_api/settings_api.dart';
 
 sealed class SettingsEvent {
   const SettingsEvent();
